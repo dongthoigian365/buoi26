@@ -1,12 +1,13 @@
 import React from 'react'
-import 'antd/dist/antd.css'
-import MyForm from './components/unit-26/Form'
+import Counter from './components/unit-27/Counter'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
 const App = () => {
   return (
-    <>
-      <MyForm />
-    </>
+    <Provider store={store}>
+      <Counter />
+    </Provider>
   )
 }
 
