@@ -1,5 +1,5 @@
 const initialState = {
-  count: 1
+  count: 2
 }
 
 const counterReducer = (state = initialState, action) => {
