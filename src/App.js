@@ -1,18 +1,53 @@
 import React from 'react'
-import Counter from './components/unit-27/Counter'
-import { Provider } from 'react-redux'
-import store from './redux/store'
-import Display from './components/Display'
-import User from './components/unit-27/User'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom"
+import 'antd/dist/antd.css'
+
+import Home from './pages/Home'
+import About from './pages/About'
+import User from './pages/User'
+import Users from './pages/Users'
 
 const App = () => {
 
   return (
-    <Provider store={store}>
-      <Counter />
-      <Display />
-      <User />
-    </Provider>
+    <>
+      <Router>
+        <ul>
+          <li>
+            <Link to='/'>Home</Link>
+          </li>
+          <li>
+            <Link to='/about'>About</Link>
+          </li>
+          <li>
+            <Link to='/users'>Users</Link>
+          </li>
+        </ul>
+
+        <Switch>
+          <Route path="/" exact>
+              <Home />
+            </Route>
+
+          <Route path="/about">
+            <About />
+          </Route>
+
+          <Route path="/users">
+            <Users />
+          </Route>
+
+          {/* <Route path="/user">
+            <User />
+          </Route> */}
+      </Switch>
+    </Router>
+  </>
   )
 }
 
