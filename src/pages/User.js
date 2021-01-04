@@ -28,9 +28,9 @@ const User = () => {
       {
         user &&
         <>
-          <p>id: {user.id}</p>
-          <p>name: {user.name}</p>
-          <p>email: {user.email}</p>
+          <p>Id: {user.id}</p>
+          <p>Name: {user.name}</p>
+          <p>Email: {user.email}</p>
         </>
       }
 

@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 
 const Users = () => {
   const [users, setUsers] = useState([])
-  // const [user, setUser] = useState([])
 
   const fetchUsers = () => {
     axios.get('https://jsonplaceholder.typicode.com/users')
@@ -14,16 +13,9 @@ const Users = () => {
     })
   }
 
-  // const fetchUser = () => {
-  //   axios.get(`https://jsonplaceholder.typicode.com/users${users.id}`)
-  //   .then(response => {
-  //     setUser(response.data)
-  //   })
-  // }
 
   useEffect(() => {
     fetchUsers()
-    // fetchUser()
   },[])
 
   return (
