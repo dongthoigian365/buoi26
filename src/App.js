@@ -3,7 +3,8 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  Link,
+  useParams
 } from "react-router-dom"
 import 'antd/dist/antd.css'
 
@@ -38,13 +39,13 @@ const App = () => {
             <About />
           </Route>
 
-          <Route path="/users">
+          <Route path="/users" exact>
             <Users />
           </Route>
 
-          {/* <Route path="/user">
+          <Route path="/users/:id" exact>
             <User />
-          </Route> */}
+          </Route>
       </Switch>
     </Router>
   </>

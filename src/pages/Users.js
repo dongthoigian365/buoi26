@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { List } from 'antd'
+import { Link } from 'react-router-dom'
 
 const Users = () => {
   const [users, setUsers] = useState([])
+  // const [user, setUser] = useState([])
 
   const fetchUsers = () => {
     axios.get('https://jsonplaceholder.typicode.com/users')
@@ -12,8 +14,16 @@ const Users = () => {
     })
   }
 
+  // const fetchUser = () => {
+  //   axios.get(`https://jsonplaceholder.typicode.com/users${users.id}`)
+  //   .then(response => {
+  //     setUser(response.data)
+  //   })
+  // }
+
   useEffect(() => {
     fetchUsers()
+    // fetchUser()
   },[])
 
   return (
@@ -25,7 +35,7 @@ const Users = () => {
         renderItem={
           user => (
             <List.Item>
-              {user.id}: {user.name}
+              <Link to={`/users/${user.id}`}>{user.id}: {user.name}</Link>
             </List.Item>
           )
         }
