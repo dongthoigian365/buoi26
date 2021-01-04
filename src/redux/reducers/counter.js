@@ -1,15 +1,20 @@
+import {
+  INCREMENT,
+  DECREMENT
+} from './../../redux/actionTypes'
+
 const initialState = {
   count: 2
 }
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT':
+    case INCREMENT:
       return {
         ...state,
         count: state.count + 1
       }
-    case 'DECREMENT':
+    case DECREMENT:
       return {
         ...state,
         count: state.count - 1
